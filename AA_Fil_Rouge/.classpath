@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="jar/junit-4.13.2.jar"/>
+	<classpathentry kind="lib" path="jar/mockito-core-4.2.0 (1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
