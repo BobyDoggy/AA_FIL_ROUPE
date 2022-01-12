@@ -9,7 +9,6 @@ public class CommandeCuisineTest {
     	
     	Assert.assertTrue(true);
 
-        
     }
 
 }
