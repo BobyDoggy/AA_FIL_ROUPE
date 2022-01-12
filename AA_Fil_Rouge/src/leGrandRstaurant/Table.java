@@ -1,21 +1,22 @@
+package leGrandRstaurant;
 public class Table {
 
-    private boolean Estlibre;
+    private boolean estlibre;
 
     public void Affecter(Client client){
 
-        Estlibre=false;
+        estlibre=false;
 
     }
 
     public void Liberer(){
 
-        EstLibre=true;
+    	estlibre=true;
 
     }
 
     public boolean getEstlibre(){
-        return Estlibre;
+        return estlibre;
     }
 
 
