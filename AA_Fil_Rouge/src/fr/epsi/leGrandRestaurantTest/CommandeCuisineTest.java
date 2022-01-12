@@ -2,7 +2,7 @@ package fr.epsi.leGrandRestaurantTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-class TestAnis {
+public class CommandeCuisineTest {
 
     @Test
     public void test(){
