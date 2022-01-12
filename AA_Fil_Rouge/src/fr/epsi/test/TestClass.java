@@ -7,7 +7,7 @@ class TestClass {
 
 	@Test	
 	public void Test1 () {
-		
+		//zzz
 	}
 
 }
