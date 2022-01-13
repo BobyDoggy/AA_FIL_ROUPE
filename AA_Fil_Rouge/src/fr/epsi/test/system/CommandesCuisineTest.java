@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsNot.not;
-
 import fr.epsi.restaurant.CommandeBoisson;
 import fr.epsi.restaurant.CommandeNourriture;
 import fr.epsi.restaurant.Restaurant;

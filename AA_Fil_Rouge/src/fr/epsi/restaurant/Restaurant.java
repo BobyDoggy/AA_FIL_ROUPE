@@ -9,6 +9,11 @@ public class Restaurant {
 	private List<Table> tables;
 
 	
+	public Restaurant()
+	{
+		
+	}
+	
 	public List<Table> tablesDisponible()
 	{
 		List<Table> tablesDisponible = new ArrayList<Table>();
