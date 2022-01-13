@@ -8,7 +8,7 @@ public class Serveur {
 	
 	private String nom;
 	private double salaire;
-	private final List<CommandeNourriture> commandesPrises = new ArrayList<CommandeNourriture>();
+	private final List<Commande> commandesPrises = new ArrayList<Commande>();
 	
 	public Serveur (String _nom, double _salaire) {
 		
@@ -17,7 +17,7 @@ public class Serveur {
 		
 	}
 	
-	public List<CommandeNourriture> getcommandesPrises() {
+	public List<Commande> getcommandesPrises() {
 		return commandesPrises;
 	}
 	
@@ -28,6 +28,10 @@ public class Serveur {
 	
 	}
 	
+	public void prendreCommande(CommandeBoissons commande) {
+		
+	
+	}
 
 	
 

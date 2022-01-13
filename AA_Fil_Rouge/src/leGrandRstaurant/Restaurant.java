@@ -7,7 +7,7 @@ public class Restaurant {
 
     private Serveur serveur;
     private Table table;
-    private List<CommandeNourriture> tachesCuisine = new ArrayList<CommandeNourriture>();
+    private List<Commande> tachesCuisine = new ArrayList<Commande>();
     
     
 
@@ -17,7 +17,7 @@ public class Restaurant {
     }
     
     
-    public List<CommandeNourriture> getCommande(Serveur serveur){
+    public List<Commande> getCommande(Serveur serveur){
     	
     	return serveur.getcommandesPrises();
     	
@@ -44,7 +44,7 @@ public class Restaurant {
     }
 
 
-	public boolean findCommande(CommandeNourriture commande) {
+	public boolean findCommande(Commande commande) {
 		// TODO Auto-generated method stub
 		int i=0;
 		boolean result=false;
