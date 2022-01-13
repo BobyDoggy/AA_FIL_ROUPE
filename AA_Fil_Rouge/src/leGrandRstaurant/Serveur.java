@@ -17,20 +17,18 @@ public class Serveur {
 		
 	}
 	
+	public List<CommandeNourriture> getcommandesPrises() {
+		return commandesPrises;
+	}
+	
+	
 	public void prendreCommande(CommandeNourriture commande) {
 		
 		commandesPrises.add(commande);
 	
 	}
 	
-	public void prendreCommande(CommandeBoissons commande) {
-		
-	}
-	
-	
-	
-	
-	
+
 	
 
 	public String getNom() {
@@ -48,5 +46,13 @@ public class Serveur {
 	public void setSalaire(double salaire) {
 		this.salaire = salaire;
 	}
+	
+
+
+	public void setScommandesPrises(double salaire) {
+		this.salaire = salaire;
+	}
+	
+	
 	
 }

@@ -5,26 +5,21 @@ import java.util.List;
 
 public class Restaurant {
 
-    private List<Serveur> serveurs;
-    private List<Table> tables;
-    private List<Commande> tachesCuisine;
+    private Serveur serveur;
+    private Table table;
+    private List<CommandeNourriture> tachesCuisine = new ArrayList<CommandeNourriture>();
+    
     
 
-    public Restaurant(List<Serveur> _serveurs, List<Table> _tables){
-        serveurs=_serveurs;
-        tables=_tables;
-    }
-
-    
-    public List<Serveur> getServeurs(){
-    	
-    	return serveurs;
-    	
+    public Restaurant(Serveur _serveur, Table _table){
+        serveur=_serveur;
+        table= _table;
     }
     
-    public List<Commande> getCommande(){
+    
+    public List<CommandeNourriture> getCommande(Serveur serveur){
     	
-    	return tachesCuisine;
+    	return serveur.getcommandesPrises();
     	
     }
     
@@ -32,21 +27,39 @@ public class Restaurant {
     	
     	List<Table> tablesLibre = new ArrayList<Table>();
     	
-    	for (Table table : tables) {
-    		
-    		if(table.getEstlibre()) {
+    	
+    	if(table.getEstlibre()) {
     			
-    			tablesLibre.add(table);
+    		tablesLibre.add(table);
     			
-    		}
     	}
     	
     	return tablesLibre;
     }
+    	
+    	
 
     public void DebuterService(){
     	
     }
+
+
+	public boolean findCommande(CommandeNourriture commande) {
+		// TODO Auto-generated method stub
+		int i=0;
+		boolean result=false;
+		
+		
+		while(result==false && i<serveur.getcommandesPrises().size()) {
+			if(serveur.getcommandesPrises().get(i).equals(commande)) {
+				result=true;
+			}
+			i++;
+			
+		}
+		
+		return result;
+	}
     
     
     
