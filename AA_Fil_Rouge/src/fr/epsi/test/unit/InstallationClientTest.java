@@ -1,4 +1,4 @@
-package fr.epsi.test.system;
+package fr.epsi.test.unit;
 
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
