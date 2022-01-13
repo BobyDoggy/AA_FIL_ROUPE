@@ -25,11 +25,14 @@ public class InstallationClientTest {
 		Table table = new Table();
 		List<Table> tables = new ArrayList<Table>();
 		tables.add(table);
-		Restaurant restaurant = new Restaurant(null,tables);
+		Restaurant restaurant = new Restaurant();
+		restaurant.setTables(tables);
 		restaurant.demarerService();
 		Client client = new Client();
+		
 		/* QUAND un client est affecté à une table */
 		table.affecter(client);
+		
 		/* ALORS cette table n'est plus disponible dans la liste des tables disponible du restaurant */
 		assertThat(restaurant.tablesDisponible(), not(hasItem(table)));
 		
@@ -39,7 +42,7 @@ public class InstallationClientTest {
 	/**
 	 * ETANT DONNÉ une table dans un restaurant durant son service
 	 * QUAND un client n'est plus affecté à une table
-	 * ALORS cette table est sur la liste des tables libres du restaurant
+	 * ALORS cette table est sur la liste des tables disponibles du restaurant
 	 */
 	@Test
 	public void dessaffectationClient()
@@ -49,7 +52,17 @@ public class InstallationClientTest {
 		Table table = new Table();
 		Client client = new Client();
 		table.affecter(client);
+		List<Table> tables = new ArrayList<Table>();
+		tables.add(table);
+		Restaurant restaurant = new Restaurant();
+		restaurant.setTables(tables);
+
+		/* QUAND un client n'est plus affecté à une table */
+		table.liberer();
 		
+		/* ALORS cette table est sur la liste des tables disponibles du restaurant */
+		assertThat(restaurant.tablesDisponible(), hasItem(table));
+
 
 	}
 

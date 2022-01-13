@@ -7,26 +7,8 @@ public class Restaurant {
 	
 	private List<Serveur>serveurs;
 	private List<Table> tables;
-	private List<I_Commande> tachesCuisine;
-	
-	
-	
-	public Restaurant(List<Serveur>P_serveur, List<Table> P_tables) {
-		this.serveurs = P_serveur;
-		this.tables = P_tables;
-	}
 
 	
-	public List<Serveur>getServeurs()
-	{
-		return serveurs;
-	}
-
-	public List<I_Commande> getTaches(){
-		return tachesCuisine;
-	}
-	
-
 	public List<Table> tablesDisponible()
 	{
 		List<Table> tablesDisponible = new ArrayList<Table>();
@@ -39,11 +21,33 @@ public class Restaurant {
 		}
 		return tablesDisponible;
 	}
-
 	
+	public void setTables(List<Table> P_tables)
+	{
+		this.tables = P_tables;
+	}
+	
+	public void setServeurs(List<Serveur> serveurs) {
+		this.serveurs = serveurs;
+	}
+
 	public void demarerService()
 	{
 		
+	}
+	
+	public List<I_Commande> getTachesEnCuisine()
+	{
+		List<I_Commande> tachesCuisine = new ArrayList<I_Commande>();
+		for(Serveur serveur : serveurs)
+		{
+			for(I_Commande commande : serveur.getCommandesPrise())
+			{
+				tachesCuisine.add(commande);
+			}
+		}
+		
+		return tachesCuisine;
 	}
 	
 	

@@ -6,10 +6,11 @@ import java.util.List;
 public class Serveur {
 	
 	
-	private final List<I_Commande> commandesPrise = new ArrayList<I_Commande>();
+	private final List<I_Commande> commandesPrise;
 	
 	private String nom;
 	private double salaire;
+	
 	
 	
 	
@@ -17,6 +18,8 @@ public class Serveur {
 		super();
 		this.nom = nom;
 		this.salaire = salaire;
+		commandesPrise = new ArrayList<I_Commande>();
+		
 	}
 
 
@@ -44,9 +47,15 @@ public class Serveur {
 	}
 
 
-	public void addCommande(CommandeNourriture commandeNourriture)
+	public void prendreCommandeNourriture(I_Commande commandeNourriture)
 	{
-		this.commandesPrise.add(commandeNourriture);
+		if(commandeNourriture instanceof CommandeNourriture)
+			this.commandesPrise.add(commandeNourriture);
+	}
+	
+	public void prendreCommandeBoisson(I_Commande commandeBoisson)
+	{
+		
 	}
 
 	public List<I_Commande> getCommandesPrise() {
