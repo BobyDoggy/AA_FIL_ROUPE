@@ -50,7 +50,9 @@ public class Serveur {
 	public void prendreCommandeNourriture(I_Commande commandeNourriture)
 	{
 		if(commandeNourriture instanceof CommandeNourriture)
+		{
 			this.commandesPrise.add(commandeNourriture);
+		}
 	}
 	
 	public void prendreCommandeBoisson(I_Commande commandeBoisson)
